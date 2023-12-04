@@ -52,11 +52,18 @@ export default function ContactLayout(){
                     <div className="bg-white w-[1px] h-[47px] border-white opacity-50">
 
                     </div>
-                    <div className="ml-[20px] duration-300">
-                        {mode? "LIGHT" : "DARK"}
+
+                    <div className="flex flex-col ml-[20px] mt-[22px]">
+                        <div className={`${mode? "h-full opacity-100" : "mt-[-40px] opacity-0"} duration-300`}>
+                            LIGHT
+                        </div>
+                        <div className={`${mode? "opacity-0" : "opacity-100"}`}>
+                            DARK
+                        </div>
                     </div>
+
                     <div className={`${mode? "rotate-0 bg-slate-100" : "rotate-180 bg-slate-400"} hover:scale-110
-                    rounded-full p-[5px] duration-300 ml-[10px]`}>
+                    rounded-full p-[5px] duration-300 ml-[10px] cursor-pointer`}>
                         <Image className="w-[17px] h-[17px]"
                         src="/img/template.png"
                         alt="Failed To Load Image"
