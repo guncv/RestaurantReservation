@@ -15,13 +15,13 @@ export default function TopMenuItem({name,path} : Props){
     }
 
     return (
-        <div className="flex flex-col cursor-pointer" 
+        <div className="cursor-pointer relative overflow-hidden" 
         onMouseEnter={handleHover}
         onMouseLeave={handleHover}>
-            <div className={`${hover? "mt-[-25px] opacity-0" : "opacity-100"} duration-300`}>
+            <div className={`${hover? "-translate-y-full" : ""} duration-150`}>
                 {name}
             </div>
-            <Link href={path} className={`text-slate-600 ${hover? "opacity-100" : "opacity-0"}`}>
+            <Link href={path} className={`text-slate-500 ${hover? "-translate-y-full" : ""} absolute duration-150`}>
                 {name}
             </Link>
         </div>

@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex flex-col"> 
+        <div className="flex flex-col w-screen fixed top-0 z-30"> 
           <ContactLayout/>
           <TopMenuLayout/>
         </div>

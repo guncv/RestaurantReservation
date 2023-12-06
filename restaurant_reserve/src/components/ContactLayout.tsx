@@ -9,16 +9,12 @@ export default function ContactLayout(){
 
     return (
         <div className="px-[5%] w-screen bg-slate-700">
-            <div className={`${styles.fontQuestrial} font-bold flex items-center text-white relative h-[47px]`}>
+            <div className={`${styles.fontQuestrial} w-full font-bold justify-between flex items-center text-white relative h-[47px]`}>
                 <div className={`${styles.Questrial} text-[13px]`}>
                    DESIGN BY GUNCV_
                 </div>
 
-                <div className="w-[70%]">
-
-                </div>
-
-                <div className="flex flex-row ml-[10%]  space-x-[10px]">
+                <div className="flex flex-row ml-[10%] space-x-[10px] items-center">
                     <div className="rounded-full p-[5px] hover:bg-slate-600 duration-300">
                         <Link href="https://www.facebook.com/profile.php?id=100009512147281" target="_blank">
                             <Image className="w-[21px] h-[21px]"
@@ -46,24 +42,23 @@ export default function ContactLayout(){
                             height={500}/>
                         </Link>
                     </div>
-                </div>
 
-                <div className="flex flex-row items-center ml-[10px] text-[13px]">
-                    <div className="bg-white w-[1px] h-[47px] border-white opacity-50">
+                    <div className="flex flex-row justify-around items-center ml-[10px] text-[13px] space-x-[15px]">
+                        <div className="bg-white w-[1px] h-[47px] border-white opacity-50">
 
-                    </div>
-
-                    <div className="flex flex-col ml-[20px] mt-[22px]">
-                        <div className={`${mode? "h-full opacity-100" : "mt-[-40px] opacity-0"} duration-300`}>
-                            LIGHT
                         </div>
-                        <div className={`${mode? "opacity-0" : "opacity-100"}`}>
-                            DARK
+
+                        <div className="overflow-hidden relative">
+                            <div className={`${mode? "" : "-translate-y-full"} duration-300`}>
+                                LIGHT
+                            </div>
+                            <div className={`${mode? "" : "-translate-y-full"} duration-300 absolute`}>
+                                DARK
+                            </div>
                         </div>
-                    </div>
 
                     <div className={`${mode? "rotate-0 bg-slate-100" : "rotate-180 bg-slate-400"} hover:scale-110
-                    rounded-full p-[5px] duration-300 ml-[10px] cursor-pointer`}>
+                    rounded-full p-[5px] duration-300 cursor-pointer`}>
                         <Image className="w-[17px] h-[17px]"
                         src="/img/template.png"
                         alt="Failed To Load Image"
@@ -72,6 +67,9 @@ export default function ContactLayout(){
                         onClick={()=>setMode(!mode)}/>
                     </div>
                 </div>
+                </div>
+
+
             </div>
         </div>       
     )
