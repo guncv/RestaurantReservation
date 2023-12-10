@@ -1,22 +1,26 @@
 import CardCatalog from "@/components/CardCatalog";
 import Introduction from "@/components/Introduction";
+import RestaurantCatalogExample from "@/components/RestaurantCatalogExample";
 import RestaurantIntro from "@/components/RestaurantIntro";
 import styles from "@/styles/Font.module.css"
-import Image from "next/image";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main>
-      <div className="w-screen flex flex-row mt-[250px]"> 
+    <main className="w-screen">
+      <div className="w-full flex flex-row mt-[250px]"> 
         <Introduction/>
       </div>
-      <div className="w-screen px-[5%] mt-[150px]">
+      <div className="w-full px-[5%] mt-[150px]">
         <hr className="border-slate-700 border-[1px]"></hr>
         <RestaurantIntro/>
       </div>
-      <div className="w-screen px-[5%] mt-[150px]">
-            <CardCatalog/>
-      </div> 
+      <div className="w-full px-[5%] mt-[150px]">
+        <RestaurantCatalogExample/>
+      </div>
+      <div className="w-full">
+        <Contact/>
+      </div>
     </main>
   )
 }

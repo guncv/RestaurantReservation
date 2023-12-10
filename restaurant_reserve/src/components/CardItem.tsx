@@ -10,17 +10,26 @@ interface Props {
 
 export default function CardItem({picture,name,location,tel} : Props){
     return (
-        <div className="w-[32%] h-[440px] mt-[40px] border-black border-[1px] relative">
-            <div className="h-[340px] w-full">
-                <Image className="h-full w-full"
+        <div className="w-[29vw] h-[42vh] mt-[40px] border-black border-[1px] relative">
+            <div className="h-[full] flex relative w-full overflow-hidden">
+                <Image className="h-[31vh] w-full hover:scale-105 relative duration-300"
                 src={picture}
                 alt="Failed To Load Image"
                 width={1000}
                 height={1000}/>
-                <div className={`${styles.fontQuestrial} text-[30px] relative text-white`}>
-                    {name.toUpperCase()}
+                <div className={`${styles.fontQuestrial} left-2 bottom-2 text-[30px] relative text-white`}>
+                    <div>
+                        {name.toUpperCase()}
+                    </div>
+                    <div>
+                        {name.toUpperCase()}
+                    </div>
                 </div>
             </div>
+
+            {/* <div>
+
+            </div> */}
         </div>
     )
 }
