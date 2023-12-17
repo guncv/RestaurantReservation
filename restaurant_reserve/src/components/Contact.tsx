@@ -8,17 +8,17 @@ export default function Contact(){
 
                 <div className="flex flex-row flex-wrap justify-start pr-[2px]">
                     <div className="flex flex-col flex-wrap h-full w-[30%] mt-[30px]">
-                        <div className="text-[2.1vw]">
+                        <div className="text-[2vw]">
                             CHANAGUN GROUP
                         </div>
-                        <div className="text-[1vw] text-slate-200 opacity-70 mt-[15px]">
+                        <div className="text-[0.8vw] text-slate-200 opacity-70 mt-[15px]">
                             savor the flavor! Explore our restaurant reserve website for instant bookings, 
                             exclusive offers, and a taste of convenience. 
                             Elevate your dining experience today at <span>HERE</span>.
                         </div>
                         <div className="flex flex-row flex-wrap mt-[25px] items-center">
                             <div className="w-fit h-fit bg-white rounded-full">
-                                <Image className="w-[70px] h-[70px]"
+                                <Image className="w-[4vw] h-[4vw]"
                                 src="/img/logo.png"
                                 alt="Failed To Load Picture"
                                 width={1000}

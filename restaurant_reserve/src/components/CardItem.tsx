@@ -11,7 +11,7 @@ interface Props {
 export default function CardItem({picture,name,location,tel} : Props){
     return (
         <div className="w-[29vw] h-[42vh] mt-[40px] border-black border-[1px] relative">
-            <div className="h-[full] flex relative w-full overflow-hidden">
+            <div className="h-full flex relative w-full overflow-hidden">
                 <Image className="h-[31vh] w-full hover:scale-105 relative duration-300"
                 src={picture}
                 alt="Failed To Load Image"
@@ -21,12 +21,8 @@ export default function CardItem({picture,name,location,tel} : Props){
                     <div>
                         {name.toUpperCase()}
                     </div>
-                    <div>
-                        {name.toUpperCase()}
-                    </div>
                 </div>
             </div>
-
             {/* <div>
 
             </div> */}
