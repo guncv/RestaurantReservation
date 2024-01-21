@@ -1,0 +1,10 @@
+//Connecting MongoDB_URL
+mongodb+srv://guncv:NTm0JWMmjnfcCCBd@restaurantreservationcl.saypu4e.mongodb.net/?retryWrites=true&w=majority
+
+mongodb+srv://guncv:<password>@restaurantreservationcl.saypu4e.mongodb.net/
+
+//Token for admin guncv
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWQyNWY1ZDY4MmY1YjlhYzQ4NTUzZiIsImlhdCI6MTcwNTg0NjI2MSwiZXhwIjoxNzM3MzgyMjYxfQ.URJ0Utd9sVhwkc4ejag8Q1_QlqYnk45tO1OMZGa0wlY
+
+//Token for user customer
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1YWQyNzQwZDY4MmY1YjlhYzQ4NTU0ZiIsImlhdCI6MTcwNTg0NjU5MiwiZXhwIjoxNzM3MzgyNTkyfQ.w2puL3I7Q3ZVrQzQxxkMWBB2lqLhJxyvstEsbrSo97M
