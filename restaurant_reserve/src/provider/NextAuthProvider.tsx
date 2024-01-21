@@ -1,5 +1,5 @@
 "use client"
-import { Session } from "inspector"
+import { Session } from "next-auth"
 import {SessionProvider} from "next-auth/react"
 
 interface Props {

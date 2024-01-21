@@ -1,7 +1,14 @@
 import styles from "@/styles/Font.module.css"
 import Image from "next/image"
+import { getServerSession } from "next-auth"
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+import getUserProfile from "@/libs/getUserProfile"
 
-export default function Introduction(){
+export default async function Introduction(){
+    const session = await getServerSession(authOptions);
+    if (!session || !session.user.token) return null
+    const profile = await getUserProfile(session?.user.token);
+    var createdAt = new Date(profile.data.createdAt)
     return (
         <div className={`${styles.fontQuestrial} w-full min-w-fit font-bold text-center`}>
             <div className="text-[15px] text-slate-400">
@@ -20,6 +27,24 @@ export default function Introduction(){
                 CHANAGUN Website 
                 <br />
                 and embark on a culinary journey like never before!
+                <div>
+                    <table className="table-auto border-separate border-spacing-2 m-5 p-5 w-full">
+                        <tbody className="justify-center items-center">
+                            <tr>
+                                <td>Email</td>
+                                <td>{profile.data.email}</td>
+                            </tr>
+                            <tr>
+                                <td>Tel</td>
+                                <td>{profile.data.tel}</td>
+                            </tr>
+                            <tr>
+                                <td>Member Since</td>
+                                <td>{createdAt.toString()}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <div className="flex justify-center flex-row mt-[100px] space-x-[20px]"> 
