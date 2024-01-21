@@ -3,6 +3,9 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import ContactLayout from '@/components/ContactLayout'
 import TopMenuLayout from '@/components/TopMenuLayout'
+import NextAuthProvider from '@/provider/NextAuthProvider'
+import { getServerSession } from 'next-auth'
+import { authOptions } from './api/auth/[...nextauth]/route'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,15 +19,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const session = getServerSession(authOptions);
+
   return (
     <html lang="en">
-      <body className={`${inter.className} text-black`}>
-        <div className="flex flex-col w-screen fixed top-0 z-30"> 
-          <ContactLayout/>
-          <TopMenuLayout/>
-        </div>
-        {children}
-      </body>
+      <NextAuthProvider session={session}>
+        <body className={`${inter.className} text-black`}>
+          <div className="flex flex-col w-screen fixed top-0 z-30"> 
+            <ContactLayout/>
+            <TopMenuLayout/>
+          </div>
+          {children}
+        </body>
+      </NextAuthProvider>
     </html>
   )
 }
