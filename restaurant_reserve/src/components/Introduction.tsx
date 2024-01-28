@@ -5,10 +5,10 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import getUserProfile from "@/libs/getUserProfile"
 
 export default async function Introduction(){
-    const session = await getServerSession(authOptions);
-    if (!session || !session.user.token) return null
-    const profile = await getUserProfile(session?.user.token);
-    var createdAt = new Date(profile.data.createdAt)
+    // const session = await getServerSession(authOptions);
+    // if (!session || !session.user.token) return null
+    // const profile = await getUserProfile(session?.user.token);
+    // var createdAt = new Date(profile.data.createdAt)
     return (
         <div className={`${styles.fontQuestrial} w-full min-w-fit font-bold text-center`}>
             <div className="text-[15px] text-slate-400">
@@ -27,7 +27,7 @@ export default async function Introduction(){
                 CHANAGUN Website 
                 <br />
                 and embark on a culinary journey like never before!
-                <div>
+                {/* <div>
                     <table className="table-auto border-separate border-spacing-2 m-5 p-5 w-full">
                         <tbody className="justify-center items-center">
                             <tr>
@@ -44,7 +44,7 @@ export default async function Introduction(){
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> */}
             </div>
 
             <div className="flex justify-center flex-row mt-[100px] space-x-[20px]"> 

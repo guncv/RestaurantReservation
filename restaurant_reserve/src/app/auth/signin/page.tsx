@@ -1,13 +1,38 @@
 'use client'
-import { useState } from "react"
+import { FormEvent, useState } from "react"
 import styles from "@/styles/Font.module.css"
 import Image from "next/image"
+import { signIn } from "next-auth/react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function Signin(){
     const [showPassword,setShowPassword] = useState(false);
     const [password,setPassword] = useState("");
+    const [error,setError] = useState("");
     const [email,setEmail] = useState("");
+    const router = useRouter();
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        try {
+            const res = await signIn("credentials", {
+                email,
+                password,
+                redirect: false
+            });
+            if (res?.error) {
+                setError(res?.error)
+                return
+            }
+            router.replace('/')
+            // I don't know how to fix this one but this works
+            setTimeout(() => {
+                window.location.reload();
+            }, 1000);
+        } catch (error) {
+            setError("Sign in failed. Account isn't existed.")
+        }
+    }
 
     return (
         <div className={`${styles.fontQuestrial} w-screen h-screen flex justify-center items-center bg-slate-300`}>
@@ -28,7 +53,7 @@ export default function Signin(){
                 </div>
 
                 <div className="h-[45%] w-full flex justify-center items-end flex-wrap">
-                    <form action="" className="w-full">
+                    <form onSubmit={handleSubmit} action="" className="w-full">
                         <div className="text-center">
                             <input className="w-[75%] h-[50px] indent-5" type="email" placeholder="Email ID"
                             onChange={(e) => setEmail(e.target.value)}/>
@@ -46,7 +71,7 @@ export default function Signin(){
                         </div>
                         
                         <div className="text-center w-full mt-[23px]">
-                            <button className="text-center h-[45px] text-[15px] bg-slate-700 text-white w-[50%] rounded-xl
+                            <button type="submit" className="text-center h-[45px] text-[15px] bg-slate-700 text-white w-[50%] rounded-xl
                             hover:bg-slate-600 duration-150 ">
                                 LOGIN
                             </button>
